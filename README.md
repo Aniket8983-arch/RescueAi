@@ -1,5 +1,7 @@
 # 🚑 RescueAI – First Aid Assistant
 
+🔗 Live Demo: https://rescueai-csetgw2eaypxjee89wshrs.streamlit.app
+
 > Instant help when every second matters.
 
 ---
