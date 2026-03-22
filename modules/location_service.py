@@ -1,12 +1,17 @@
-from geopy.geocoders import Nominatim
+import requests
 
 def get_coordinates(city):
 
-    geolocator = Nominatim(user_agent="first_aid_app")
+    url = f"https://nominatim.openstreetmap.org/search?q={city}&format=json"
 
-    location = geolocator.geocode(city)
+    try:
+        response = requests.get(url, headers={"User-Agent": "rescue-ai"})
+        data = response.json()
 
-    if location:
-        return location.latitude, location.longitude
-    else:
+        if data:
+            return float(data[0]["lat"]), float(data[0]["lon"])
+
+        return None, None
+
+    except:
         return None, None

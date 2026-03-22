@@ -1,40 +1,30 @@
-import os
-from groq import Groq
 import streamlit as st
-
-api_key = st.secrets["GROQ_API_KEY"]
-
-# read the key
-api_key = os.getenv("GROQ_API_KEY")
-
-print("DEBUG KEY:", api_key)  # temporary debug
-
-client = Groq(api_key=api_key)
+from groq import Groq
 
 def generate_first_aid(emergency):
 
-    prompt = f"""
-You are a professional first aid assistant.
+    try:
+        # Get API key from Streamlit secrets
+        api_key = st.secrets["GROQ_API_KEY"]
 
-Emergency situation: {emergency}
+        client = Groq(api_key=api_key)
 
-Provide:
+        prompt = f"""
+You are a medical first aid assistant.
 
-1. Immediate actions
-2. What NOT to do
-3. Warning signs
-4. When to seek medical help
+Provide clear, step-by-step first aid instructions for this situation:
+
+{emergency}
+
+Keep it simple, actionable, and safe.
 """
 
-    try:
         response = client.chat.completions.create(
-            model="llama-3.1-8b-instant",
-            messages=[
-                {"role": "user", "content": prompt}
-            ]
+            messages=[{"role": "user", "content": prompt}],
+            model="llama3-8b-8192"
         )
 
         return response.choices[0].message.content
 
     except Exception as e:
-        return f"AI request failed: {e}"
+        return f"AI service error: {str(e)}"
