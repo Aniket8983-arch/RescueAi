@@ -24,6 +24,23 @@ It is designed to assist users during the critical moments before professional m
 * 🎯 Fast and user-friendly interface
 
 ---
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home](screenshots/Homepage.png)
+
+### 🩺 Emergency AI
+
+![AI](screenshots/EmergencyAssistance.png)
+
+### 🗺️ Hospital Map
+
+![Map](screenshots/Map.png)
+
+### 📋 AI Response
+
+![Response](screenshots/Response1.png)
 
 ## 🧰 Tech Stack
 
