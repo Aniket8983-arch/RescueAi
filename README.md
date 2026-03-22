@@ -138,6 +138,11 @@ This application provides first aid guidance only and is not a substitute for pr
 Aniket Patil , Kartik Madukar
 
 ---
+## 🌐 Deployment
+
+This app is deployed using **Streamlit Community Cloud**.
+
+🔗 Live App: https://rescueai-csetgw2eaypxjee89wshrs.streamlit.app
 
 ## ⭐ Support
 
